@@ -51,10 +51,13 @@ const Footer = () => {
             <div className="mt-6 lg:mt-0 lg:flex-1">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">About</h3>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                        <h3 className="text-gray-700 uppercase dark:text-white">Quick Links</h3>
+                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Home</Link>
+                        <Link to={'/queries'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">queries</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">about</Link>
+                        <Link to={'/login'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Login</Link>
+                        <Link to={'/registation'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">registation</Link>
+                       
                     </div>
 
                     <div>
@@ -65,10 +68,10 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">Products</h3>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega cloud</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion UI</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki UI</a>
+                        <h3 className="text-gray-700 uppercase dark:text-white">Services</h3>
+                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">AltPrductuct</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">FindPriduct</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">GetProduct</Link>
                     </div>
 
                     <div>
