@@ -29,7 +29,7 @@ const Navbar = () => {
       </li>
       <li className="text-sm font-semibold mr-2">
         <Link
-          className={({ isActive }) => (isActive ? "active" : "")}
+          className={({ isActive }) => (isActive ? "active text-[#3B82F6] bg-base-100" : "")}
           to={"/query"}
         >
           Queries
@@ -55,6 +55,9 @@ const Navbar = () => {
         </Link>
       </li>
       }
+      <li className="text-sm  font-semibold">
+        <Link to={'/myquery'}>MyQuery</Link>
+      </li>
     </>
   );
   return (

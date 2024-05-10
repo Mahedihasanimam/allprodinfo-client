@@ -7,6 +7,7 @@ import AddQuery from "../pages/AddQuery";
 import Query from "../pages/Query";
 import RecomendationForMe from "../pages/RecomendationForMe";
 import MyRecomendation from "../pages/MyRecomendation";
+import MyQuery from "../pages/MyQuery";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         ,{
           path:'/myrecoment',
           element:<MyRecomendation/>
+        }
+        ,{
+          path:'/myquery',
+          element:<MyQuery/>
         }
       ]
     },
