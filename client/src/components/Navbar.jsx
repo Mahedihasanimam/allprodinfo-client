@@ -30,7 +30,7 @@ const Navbar = () => {
       <li className="text-sm font-semibold mr-2">
         <Link
           className={({ isActive }) => (isActive ? "active" : "")}
-          to={"/Queries"}
+          to={"/query"}
         >
           Queries
         </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
         user && <li className="text-sm font-semibold">
         <Link
           className={({ isActive }) => (isActive ? "active" : "")}
-          to={"/RecommendationsForMe"}
+          to={"/recoforme"}
         >
           RecommendationsFor Me
         </Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
         user && <li className="text-sm font-semibold">
         <Link
           className={({ isActive }) => (isActive ? "active" : "")}
-          to={"/Myrecommendations"}
+          to={"/myrecoment"}
         >
           My recommendations
         </Link>

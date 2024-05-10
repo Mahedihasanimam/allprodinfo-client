@@ -4,6 +4,9 @@ import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Registation from "../components/Registation";
 import AddQuery from "../pages/AddQuery";
+import Query from "../pages/Query";
+import RecomendationForMe from "../pages/RecomendationForMe";
+import MyRecomendation from "../pages/MyRecomendation";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
         ,{
           path:'/addquery',
           element:<AddQuery/>
+        }
+        ,{
+          path:'/query',
+          element:<Query/>
+        }
+        ,{
+          path:'/recoforme',
+          element:<RecomendationForMe/>
+        }
+        ,{
+          path:'/myrecoment',
+          element:<MyRecomendation/>
         }
       ]
     },
