@@ -8,6 +8,7 @@ import Query from "../pages/Query";
 import RecomendationForMe from "../pages/RecomendationForMe";
 import MyRecomendation from "../pages/MyRecomendation";
 import MyQuery from "../pages/MyQuery";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -35,15 +36,15 @@ const router = createBrowserRouter([
         }
         ,{
           path:'/recoforme',
-          element:<RecomendationForMe/>
+          element:<PrivateRoute><RecomendationForMe/></PrivateRoute>
         }
         ,{
           path:'/myrecoment',
-          element:<MyRecomendation/>
+          element:<PrivateRoute><MyRecomendation/></PrivateRoute>
         }
         ,{
           path:'/myquery',
-          element:<MyQuery/>
+          element:<PrivateRoute><MyQuery/></PrivateRoute>
         }
       ]
     },

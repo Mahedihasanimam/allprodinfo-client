@@ -101,7 +101,7 @@ const Registation = () => {
                   type="text"
                   name="name"
                   placeholder="Username"
-                  className="block w-full py-3 text-gray-700  border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full py-3   border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   {...register("username", { required: true })}
                 />{" "}
                 <br />
@@ -130,7 +130,7 @@ const Registation = () => {
                 <input
                   type="email"
                   name="email"
-                  className="block w-full py-3 text-gray-700  border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full py-3   border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Email address"
                   {...register("email", { required: true })}
                 />
@@ -149,7 +149,7 @@ const Registation = () => {
                   type="text"
                   name="photo"
                   placeholder="Photo Url"
-                  className="block w-full  py-3 text-gray-700  border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full  py-3   border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   {...register("photo", { required: true })}
                 />
               </div>
@@ -178,7 +178,7 @@ const Registation = () => {
                 <input
                   type="password"
                   name="password"
-                  className="block w-full px-10 py-3 text-gray-700  border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-10 py-3   border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Password"
                   {...register("password", { required: true })}
                 />

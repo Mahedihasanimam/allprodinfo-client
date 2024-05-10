@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // hoock form
 import { useForm } from "react-hook-form";
 import loginimage from "../assets/undraw_sign_in_re_o58h.svg";
@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 const Login = () => {
+  const location=useLocation()
+  console.log(location.state)
     const navigate=useNavigate()
     const {googleLogin,login}=useContext(AuthContext)
   // hoock form
@@ -24,7 +26,7 @@ const Login = () => {
     login(email,password)
     .then(result=>{
 
-        navigate('/')
+        navigate(location.state || "/")
         console.log(result)
     })
     .catch(err=>{
@@ -35,7 +37,7 @@ const Login = () => {
 const handlegoolelogin=()=>{
     googleLogin()
     .then(result=>{
-      navigate('/')
+      navigate(location.state || "/")
       toast.success('Login successfully')
         console.log(result)
     })
@@ -91,7 +93,7 @@ const handlegoolelogin=()=>{
                 <input
                   type="email"
                   name="email"
-                  className="block w-full py-3 text-gray-700  border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full py-3   border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Email address"
                   {...register("email", { required: true })}
                 />
@@ -121,7 +123,7 @@ const handlegoolelogin=()=>{
                 <input
                   type="password"
                   name="password"
-                  className="block w-full px-10 py-3 text-gray-700  border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-10 py-3   border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Password"
                   {...register("password", { required: true })}
                 />
