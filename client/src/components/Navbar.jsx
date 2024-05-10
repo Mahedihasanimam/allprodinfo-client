@@ -27,7 +27,7 @@ const Navbar = () => {
           Home
         </Link>
       </li>
-      <li className="text-sm font-semibold">
+      <li className="text-sm font-semibold mr-2">
         <Link
           className={({ isActive }) => (isActive ? "active" : "")}
           to={"/Queries"}
