@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className="bg-base-200 dark:bg-gray-900">
     <div className="container p-6 mx-auto">
         <div className="lg:flex">
             <div className="w-full -mx-6 lg:w-2/5">
                 <div className="px-6">
                     <a href="#">
-                    <Link to={'/'} className=" font-bold lg:text-2xl text-xl"><span className="text-secondary">ALTPRODINFO</span>.COM</Link>
+                    <Link to={'/'} className=" font-bold lg:text-2xl text-xl"><span className="text-[#3B82F6]">ALTPRODINFO</span>.COM</Link>
                     </a>
 
                     <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
@@ -86,7 +86,7 @@ const Footer = () => {
         <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700"/>
 
         <div>
-            <p className="text-center text-gray-500 dark:text-gray-400">© <span className=" font-bold  text-sm"><span className="text-secondary">ALTPRODINFO</span>.COM</span> 2020 - All rights reserved</p>
+            <p className="text-center text-gray-500 dark:text-gray-400">© <span className=" font-bold  text-sm"><span className="text-[#3B82F6]">ALTPRODINFO</span>.COM</span> 2020 - All rights reserved</p>
         </div>
     </div>
 </footer>

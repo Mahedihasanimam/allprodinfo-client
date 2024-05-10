@@ -1,15 +1,52 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const navigation=<>
-        <li className="text-sm font-semibold"><Link to={'/'} >Home</Link></li>
-        <li className="text-sm font-semibold"><Link to={'/Queries'} >Queries</Link></li>
-        <li className="text-sm font-semibold"><Link to={'/RecommendationsForMe'} >RecommendationsFor Me</Link></li>
-        <li className="text-sm font-semibold"><Link to={'/Myrecommendations'} >My recommendations</Link></li>
-       
+  const navigation = (
+    <>
+      <li className="text-sm text-[#3B82F6] font-semibold">
+        <Link
+          className={({ isActive }) =>
+            isActive ? "active text-[#3B82F6] bg-red-500" : ""
+          }
+          to={"/"}
+        >
+          Home
+        </Link>
+      </li>
+      <li className="text-sm font-semibold">
+        <Link
+          className={({ isActive }) =>
+            isActive ? "active"  : ""
+          }
+          to={"/Queries"}
+        >
+          Queries
+        </Link>
+      </li>
+      <li className="text-sm font-semibold">
+        <Link
+          className={({ isActive }) =>
+            isActive ? "active" :""
+          }
+          to={"/RecommendationsForMe"}
+        >
+          RecommendationsFor Me
+        </Link>
+      </li>
+      <li className="text-sm font-semibold">
+        <Link
+          className={({ isActive,  }) =>
+            isActive ? "active" : ""
+          }
+          to={"/Myrecommendations"}
+        >
+          My recommendations
+        </Link>
+      </li>
     </>
+  );
   return (
-    <div className=" bg-base-100  shadow-md">
+    <div className=" bg-base-100  shadow-md ">
       <div className="navbar flex container px-4 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -33,22 +70,22 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {
-            navigation
-           }
+              {navigation}
             </ul>
           </div>
-          <Link to={'/'} className="btn btn-ghost font-bold lg:text-2xl text-xl text-wrap"><span className="text-secondary">ALTPRODINFO</span> .COM</Link>
+          <Link to={"/"} className=" font-bold lg:text-2xl text-xl text-wrap">
+            <span className="text-[#3B82F6]">ALTPRODINFO</span> .COM
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-           {
-            navigation
-           }
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navigation}</ul>
         </div>
         <div className="navbar-end">
-         <Link className="" to={'/login'}><button className="btn bg-secondary lg:px-8 text-white font-bold rounded-md text-lg">Login</button></Link>
+          <Link className="" to={"/login"}>
+            <button className="btn bg-[#3B82F6] lg:px-8 text-white font-bold rounded-md text-lg">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
     </div>
