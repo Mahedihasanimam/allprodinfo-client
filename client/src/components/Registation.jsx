@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdAddPhotoAlternate } from "react-icons/md";
 
 // hoock form
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import image from '../assets/undraw_Account_re_o7id (1).png';
+import image from '../assets/undraw_account_re_o7id.svg';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 const Registation = () => {
+    const navigate=useNavigate()
+    const {createUser,logout}=useContext(AuthContext)
   // hoock form
   const {
     register,
@@ -14,6 +18,7 @@ const Registation = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     const name = data.username;
     const email = data.email;
@@ -26,26 +31,27 @@ const Registation = () => {
       return toast.error("password should be up to 6 charecter");
     }
     console.log(name, email, photo, password);
+    createUser(email,password)
+    .then(result=>{
+        toast.success('regesistration success')
+        navigate('/login')
+        logout()
+        console.log(result)
+    })
+    .catch(err=>{
+        toast.error('something went wrong')
+        console.log(err)
+    })
   };
 
-  // hoock form
 
-  // const handleregister=(e)=>{
-  //     e.preventDefault()
-  //     const form=e.target
-  //     const name=form.name.value
-  //     const email=form.email.value
-  //     const photo=form.photo.value
-  //     const password=form.password.value
-  //     console.log(name,photo,email,password)
-  // }
   return (
-    <div className="flex lg:flex-row md:flex-row flex-col justify-center items-center  mt-4">
+    <div className="flex  lg:flex-row md:flex-row flex-col justify-center items-center  mt-4">
       <div className="">
         <img src={image} alt="" />
       </div>
-      <div className="w-full">
-        <section className="bg-white dark:bg-gray-900">
+      <div className="w-2/3">
+        <section className="bg-transparent dark:bg-gray-900">
           <div className="container flex items-center justify-start min-h-screen px-6 mx-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
               <div className="flex justify-center mx-auto">

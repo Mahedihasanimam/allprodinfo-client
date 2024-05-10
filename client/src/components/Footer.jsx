@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-base-200 dark:bg-gray-900">
+        <footer className=" dark:bg-gray-900">
     <div className="container p-6 mx-auto">
         <div className="lg:flex">
             <div className="w-full -mx-6 lg:w-2/5">
@@ -11,11 +11,11 @@ const Footer = () => {
                     <Link to={'/'} className=" font-bold lg:text-2xl text-xl"><span className="text-[#3B82F6]">ALTPRODINFO</span>.COM</Link>
                     </a>
 
-                    <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
+                    <p className="max-w-sm mt-2 text-gray-500">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
 
-                    <div className="flex mt-6 -mx-2">
+                    <div className="flex mt-6 -mx-2 ">
                         <a href="#"
-                            className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            className="mx-2 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                             aria-label="Reddit">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -25,7 +25,7 @@ const Footer = () => {
                         </a>
                     
                         <a href="#"
-                            className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            className="mx-2 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                             aria-label="Facebook">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -36,7 +36,7 @@ const Footer = () => {
                     
                         <a href="#"
                         
-                            className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            className="mx-2 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                             aria-label="Github">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -50,34 +50,42 @@ const Footer = () => {
 
             <div className="mt-6 lg:mt-0 lg:flex-1">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">Quick Links</h3>
-                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Home</Link>
-                        <Link to={'/queries'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">queries</Link>
-                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">about</Link>
-                        <Link to={'/login'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Login</Link>
-                        <Link to={'/registation'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">registation</Link>
+                    <div >
+                       <h3 className=" uppercase dark:text-white">Quick Links</h3>
+                       <div className="text-gray-500">
+                        <Link to={'/'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">Home</Link>
+                        <Link to={'/queries'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">queries</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">about</Link>
+                        <Link to={'/login'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">Login</Link>
+                        <Link to={'/registation'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">registation</Link>
+                       </div>
                        
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">Blog</h3>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                        <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
+                        <h3 className=" uppercase dark:text-white">Blog</h3>
+                        <div className="text-gray-500">
+                        <a href="#" className="block mt-2 text-sm dark:text-gray-400 hover:underline">Tec</a>
+                        <a href="#" className="block mt-2 text-sm dark:text-gray-400 hover:underline">Music</a>
+                        <a href="#" className="block mt-2 text-sm dark:text-gray-400 hover:underline">Videos</a>
+                        </div>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">Services</h3>
-                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">AltPrductuct</Link>
-                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">FindPriduct</Link>
-                        <Link to={'/'}  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">GetProduct</Link>
+                        <h3 className=" uppercase dark:text-white">Services</h3>
+                      <div className="text-gray-500">
+                      <Link to={'/'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">AltPrductuct</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">FindPriduct</Link>
+                        <Link to={'/'}  className="block mt-2 text-sm dark:text-gray-400 hover:underline">GetProduct</Link>
+                      </div>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                        <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                        <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
+                        <h3 className=" uppercase dark:text-white">Contact</h3>
+                        <div className="text-gray-500">
+                        <span className="block mt-2 text-sm dark:text-gray-400 hover:underline">+1 526 654 8965</span>
+                        <span className="block mt-2 text-sm dark:text-gray-400 hover:underline">example@email.com</span>
+                        </div>
                     </div>
                 </div>
             </div>

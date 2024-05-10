@@ -3,6 +3,7 @@ import MainLayout from "../pages/MainLayout";
 import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Registation from "../components/Registation";
+import AddQuery from "../pages/AddQuery";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         ,{
           path:'/registation',
           element:<Registation/>
+        }
+        ,{
+          path:'/addquery',
+          element:<AddQuery/>
         }
       ]
     },
