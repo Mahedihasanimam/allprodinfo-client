@@ -1,5 +1,7 @@
+
 import Banner from "./Banner";
 import Carocel from "./Carocel";
+import RecentlyQueries from "./RecentlyQueries";
 
 const Home = () => {
     return (
@@ -8,7 +10,7 @@ const Home = () => {
            <Carocel/>
            </div>
             <Banner/>
-            <h1 className="text-6xl font-bold font-poppins uppercase">this is home</h1>
+            <RecentlyQueries/>
         </div>
     );
 };

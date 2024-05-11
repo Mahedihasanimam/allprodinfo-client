@@ -9,6 +9,7 @@ import RecomendationForMe from "../pages/RecomendationForMe";
 import MyRecomendation from "../pages/MyRecomendation";
 import MyQuery from "../pages/MyQuery";
 import PrivateRoute from "./PrivateRoute";
+import Detail from "../components/Detail";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         ,{
           path:'/myquery',
           element:<PrivateRoute><MyQuery/></PrivateRoute>
+        }
+        ,{
+          path:'/myquery/:id',
+          element:<PrivateRoute><Detail/></PrivateRoute>,
+          loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/queryes/${params.id}`)
         }
       ]
     },
