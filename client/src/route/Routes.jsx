@@ -10,6 +10,7 @@ import MyRecomendation from "../pages/MyRecomendation";
 import MyQuery from "../pages/MyQuery";
 import PrivateRoute from "./PrivateRoute";
 import Detail from "../components/Detail";
+import UpdateQuery from "../components/UpdateQuery";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
           path:'/myquery/:id',
           element:<PrivateRoute><Detail/></PrivateRoute>,
           loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/queryes/${params.id}`)
+        },
+        {
+          path:'/update/:id',
+          element:<PrivateRoute><UpdateQuery></UpdateQuery></PrivateRoute>
         }
       ]
     },

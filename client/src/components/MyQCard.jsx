@@ -59,9 +59,9 @@ const MyQCard = ({myqueryitem}) => {
                         
                     </Link><br />
                     <Tooltip  id="my-tooltip" />
-                    <button className="btn text-white bg-[#3B82F6]">
+                    <Link to={`/update/${_id}`} className="btn text-white bg-[#3B82F6]">
                         <HiPencil size={25}/>
-                        </button><br />
+                        </Link><br />
                     <button className="btn text-white bg-[#3B82F6]">
                         <MdDelete size={25}/>
                     </button>

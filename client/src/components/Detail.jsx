@@ -130,6 +130,9 @@ const Detail = () => {
             </div>
           </div>
         </div>
+          
+          <h1 className="text-2xl font-bold text-blue-500">All Recommendations</h1>
+   
 
           {
             recomend.map(recoitem=><RecomentCard key={recoitem._id} recoitem={recoitem}></RecomentCard>)
