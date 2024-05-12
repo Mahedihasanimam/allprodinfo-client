@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useContext} from "react";
+import { useContext, useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-
+import toast from "react-hot-toast";
+import RecomentCard from "./RecomentCard";
 const Detail = () => {
   const { user } = useContext(AuthContext);
   const detailquery = useLoaderData();
+  const [recomend, setrecomend] = useState([]);
+
   const {
     ProductName,
     ProductBrand,
@@ -22,23 +25,62 @@ const Detail = () => {
     recomendationCount,
   } = detailquery;
 
-  const handleAddRecomen = (e) => {
-   
+  const handleAddRecomen = async (e) => {
     e.preventDefault();
     const form = e.target;
     const queryid = _id;
-    const queryTitle = queryTItle
-    const recomentTitle=form.QueryTItle.value
+    const queryTitle = queryTItle;
+    const recomentTitle = form.QueryTItle.value;
     const ProductName = form.ProductName.value;
+    const recomendProduct = form.photo.value;
     const userEmail = email;
     const userName = name;
     const RecommenderEmail = user?.email;
     const RecommenderName = user?.displayName;
+    const recomenderPhoto=user?.photoURL;
     const details = form.details.value;
-    const CurrentTimeStamp=new Date().toLocaleDateString()
-    const addRecomenData={queryid,queryTitle,recomentTitle,ProductName,userEmail,userName,RecommenderEmail,RecommenderName,details,CurrentTimeStamp}
-    console.table(addRecomenData)
+    const CurrentTimeStamp = new Date().toLocaleDateString();
+    const addRecomenData = {
+      queryid,
+      queryTitle,
+      recomentTitle,
+      ProductName,
+      userEmail,
+      userName,
+      RecommenderEmail,
+      RecommenderName,
+      details,
+      CurrentTimeStamp,
+      recomenderPhoto,
+      recomendProduct
+    };
+
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/recomend`,
+        addRecomenData
+      );
+      setrecomend(data);
+      if (data.acknowledged) {
+        toast.success("your recomnd added");
+        form.reset();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  useEffect(() => {
+    const Data = async () => {
+      try {
+        const { data } = await axios(`${import.meta.env.VITE_API_URL}/recomend/${_id}`);
+        setrecomend(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    Data();
+  }, [_id]);
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className=" mt-12 mx-auto overflow-hidden border-2 rounded-lg  dark:bg-gray-800">
@@ -83,10 +125,16 @@ const Detail = () => {
                 {queryTItle}
               </Link>
               <strong>recomendationCount : {recomendationCount}</strong>
+              {/* <p>{recomend.}</p> */}
               <p className="mt-2 text-sm  dark:text-gray-400">{details}</p>
             </div>
           </div>
         </div>
+
+          {
+            recomend.map(recoitem=><RecomentCard key={recoitem._id} recoitem={recoitem}></RecomentCard>)
+          }
+
       </div>
       <section className=" p-6 mx-auto  rounded-md shadow-md border-2  dark:bg-gray-800 mb-8">
         <h2 className="text-2xl text-[#3B82F6] font-semibold  capitalize dark:text-white">
@@ -151,7 +199,7 @@ const Detail = () => {
           </div>
 
           <button className="px-8 mt-4 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-[#3B82F6] focus:outline-none focus:bg-gray-600">
-            {" "}
+         
             AddRecommendation
           </button>
         </form>
