@@ -50,10 +50,10 @@ const handlegoolelogin=()=>{
   // hoock form
   return (
     <div className="flex lg:flex-row md:flex-row flex-col mx-auto justify-center items-center  mt-4 gap-8">
-      <div className="w-2/">
+      <div className="">
         <img src={loginimage} alt="" />
       </div>
-      <div className=" w-2/3">
+      <div className="lg:w-2/3 md:w-2/3">
         <section className="  dark:bg-gray-900">
           <div className="container  flex items-center justify-start min-h-screen px-6 mx-auto ">
             <form

@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from 'axios';
 import toast from "react-hot-toast";
 const AddQuery = () => {
     const {user}=useContext(AuthContext)
-
+    const [recomendationCount,setRecomendationCount]=useState(0)
     const handleAddquery=async(e)=>{
         e.preventDefault()
         const form=e.target 
@@ -20,7 +20,7 @@ const AddQuery = () => {
 
         const currentDate=new Date().toLocaleDateString()
         const currentTime=new Date().toLocaleTimeString()
-        const queryInfo={ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime}
+        const queryInfo={ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,recomendationCount}
         console.table(queryInfo)
         try{
            const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/addqueries`,queryInfo)

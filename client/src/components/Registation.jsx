@@ -50,7 +50,7 @@ const Registation = () => {
       <div className="">
         <img src={image} alt="" />
       </div>
-      <div className="w-2/3">
+      <div className="lg:w-2/3 md:w-2/3">
         <section className="bg-transparent dark:bg-gray-900">
           <div className="container flex items-center justify-start min-h-screen px-6 mx-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">

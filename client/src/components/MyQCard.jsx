@@ -3,9 +3,10 @@ import { TbListDetails } from "react-icons/tb";
 import { HiPencil } from "react-icons/hi2";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { Tooltip as ReactTooltip, Tooltip } from 'react-tooltip'
 const MyQCard = ({myqueryitem}) => {
 
-    const {ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,_id}=myqueryitem;
+    const {ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,_id,recomendationCount}=myqueryitem;
     return (
         <div className=" relative overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800">
         {image &&
@@ -31,7 +32,7 @@ const MyQCard = ({myqueryitem}) => {
                </div>
              </div>
              <div>
-               <strong className="text-xs">{ProductBrand}-</strong>
+               <strong className="text-xs ">{ProductBrand}-</strong>
                <span className="text-md font-medium text-blue-600 uppercase dark:text-blue-400">
                 {ProductName}
                </span>
@@ -43,6 +44,7 @@ const MyQCard = ({myqueryitem}) => {
                >
                 {queryTItle}
                </a>
+               <strong>recomendationCount : {recomendationCount}</strong>
                <p className="mt-2 text-sm  dark:text-gray-400">
                  {details.slice(0,50)}
                  
@@ -52,9 +54,11 @@ const MyQCard = ({myqueryitem}) => {
                    {currentDate}
                  </span>
                  <div className="absolute bottom-4 right-4 space-y-2">
-                    <Link to={`/myquery/${_id}`} className="btn text-white border-none bg-[#3B82F6]">
+                    <Link data-tooltip-id="my-tooltip" data-tooltip-content="details" to={`/myquery/${_id}`} className="btn text-white border-none bg-[#3B82F6]">
                         <TbListDetails size={25}/>
+                        
                     </Link><br />
+                    <Tooltip  id="my-tooltip" />
                     <button className="btn text-white bg-[#3B82F6]">
                         <HiPencil size={25}/>
                         </button><br />

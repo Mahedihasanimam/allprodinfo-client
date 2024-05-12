@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({queryitem}) => {
 
-    const {ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,_id}=queryitem;
+    const {ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,_id,recomendationCount}=queryitem;
   return (
     <Link to={`/myquery/${_id}`}>
     <div className=" overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800">
@@ -42,6 +42,7 @@ const Card = ({queryitem}) => {
             >
              {queryTItle}
             </a>
+            <strong>recomendationCount : {recomendationCount}</strong>
             <p className="mt-2 text-sm  dark:text-gray-400">
               {details.slice(0,50)}
               
