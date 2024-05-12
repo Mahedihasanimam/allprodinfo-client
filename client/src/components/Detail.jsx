@@ -51,7 +51,7 @@ const Detail = () => {
         )) || <CgProfile />}
 
         <div className="p-6">
-          <div className="">
+          <div>
             <div className="mt-4">
               <div className="flex items-center">
                 <div className="flex gap-2 justify-center items-center">
