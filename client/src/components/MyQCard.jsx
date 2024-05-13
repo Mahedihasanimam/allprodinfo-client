@@ -15,7 +15,7 @@ const MyQCard = ({myqueryitem,query,setquery}) => {
   
    Swal.fire({
     title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    text: "You won't be able to recover this query!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -26,7 +26,7 @@ const MyQCard = ({myqueryitem,query,setquery}) => {
     if (result.isConfirmed) {
       Swal.fire({
         title: "Deleted!",
-        text: "Your file has been deleted.",
+        text: "Your query has been deleted.",
         icon: "success"
       });
       try{

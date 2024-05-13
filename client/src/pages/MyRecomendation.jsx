@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { RiDeleteBinLine } from "react-icons/ri";
+import Swal from "sweetalert2";
 const MyRecomendation = () => {
   const { user } = useContext(AuthContext);
   const [myrecomentData, setMyrecomentData] = useState([]);
@@ -15,6 +16,39 @@ const MyRecomendation = () => {
     };
     myrecoment();
   }, []);
+
+  const handleMyRecoDelete=async(id)=>{
+    console.log("deleted",id)
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to recover this query!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your query has been deleted.",
+            icon: "success"
+          });
+          try{
+            const {data}= axios.delete(`${import.meta.env.VITE_API_URL}/recomendation/${id}`)
+            const remainingdata=myrecomentData.filter(q=>q._id !== id)
+            setMyrecomentData(remainingdata)
+           }
+           catch(err){
+            console.log(err)
+           }
+        }
+      });
+   
+  
+  }
   return (
     <div>
       <div className="overflow-x-auto min-h-screen my-8 px-4">
@@ -64,7 +98,7 @@ const MyRecomendation = () => {
                       </td>
                     
                       <th>
-                        <button className="btn btn-ghost ">
+                        <button onClick={()=>handleMyRecoDelete(reco._id)} className="btn btn-ghost ">
                             <RiDeleteBinLine size={25}/>
                         </button>
                       </th>
