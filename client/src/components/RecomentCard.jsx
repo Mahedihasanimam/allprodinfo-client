@@ -43,7 +43,7 @@ const RecomentCard = ({ recoitem }) => {
           >
             {recomentTitle}
           </p>
-          <p className="mt-2 text-gray-600 dark:text-gray-300">{details}</p>
+          <p className="mt-2 dark:text-gray-300">{details}</p>
         </div>
 
         <div className="flex items-center justify-between mt-4">

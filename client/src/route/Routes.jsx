@@ -42,7 +42,8 @@ const router = createBrowserRouter([
         }
         ,{
           path:'/myrecoment',
-          element:<PrivateRoute><MyRecomendation/></PrivateRoute>
+          element:<PrivateRoute><MyRecomendation/></PrivateRoute>,
+         
         }
         ,{
           path:'/myquery',

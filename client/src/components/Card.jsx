@@ -42,7 +42,7 @@ const Card = ({queryitem}) => {
             >
              {queryTItle}
             </a>
-            <strong>recomendationCount : {recomendationCount}</strong>
+     
             <p className="mt-2 text-sm  dark:text-gray-400">
               {details.slice(0,50)}
               

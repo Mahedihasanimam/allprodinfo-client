@@ -9,6 +9,7 @@ const Detail = () => {
   const { user } = useContext(AuthContext);
   const detailquery = useLoaderData();
   const [recomend, setrecomend] = useState([]);
+  console.log(recomend)
 
   const {
     ProductName,
@@ -78,6 +79,7 @@ const Detail = () => {
    const rcomendData=async()=>{
     const {data}=await axios(`${import.meta.env.VITE_API_URL}/recomend/${_id}`)
     setrecomend(data)
+  
    }
    rcomendData()
   },[_id])
@@ -124,7 +126,7 @@ const Detail = () => {
               >
                 {queryTItle}
               </Link>
-              <strong>recomendationCount : {recomendationCount}</strong>
+              <strong>recomendationCount : {recomend.length}</strong>
              
               <p className="mt-2 text-sm  dark:text-gray-400">{details}</p>
             </div>
