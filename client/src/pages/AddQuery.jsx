@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from 'axios';
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const AddQuery = () => {
     const {user}=useContext(AuthContext)
+    const navigate=useNavigate()
     const [recomendationCount,setRecomendationCount]=useState(0)
     const handleAddquery=async(e)=>{
         e.preventDefault()
@@ -27,6 +29,7 @@ const AddQuery = () => {
            if(data.acknowledged){
             toast.success('Your Query Added')
             form.reset()
+            navigate('/myquery')
            }
         }
         catch(err){

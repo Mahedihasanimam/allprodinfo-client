@@ -1,12 +1,8 @@
 const RecomentCard = ({ recoitem }) => {
   const {
-    queryid,
-    queryTitle,
+
     recomentTitle,
-    ProductName,
-    userEmail,
-    userName,
-    RecommenderEmail,
+
     RecommenderName,
     details,
     CurrentTimeStamp,

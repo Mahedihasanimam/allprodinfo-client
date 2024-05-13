@@ -52,7 +52,8 @@ const Detail = () => {
       details,
       CurrentTimeStamp,
       recomenderPhoto,
-      recomendProduct
+      recomendProduct,
+      _id
     };
 
     try {
@@ -60,7 +61,7 @@ const Detail = () => {
         `${import.meta.env.VITE_API_URL}/recomend`,
         addRecomenData
       );
-      setrecomend(data);
+      
       if (data.acknowledged) {
         toast.success("your recomnd added");
         form.reset();
@@ -68,19 +69,18 @@ const Detail = () => {
     } catch (err) {
       console.log(err);
     }
+   
+
+
   };
 
-  useEffect(() => {
-    const Data = async () => {
-      try {
-        const { data } = await axios(`${import.meta.env.VITE_API_URL}/recomend/${_id}`);
-        setrecomend(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    Data();
-  }, [_id]);
+  useEffect(()=>{
+   const rcomendData=async()=>{
+    const {data}=await axios(`${import.meta.env.VITE_API_URL}/recomend/${_id}`)
+    setrecomend(data)
+   }
+   rcomendData()
+  },[_id])
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className=" mt-12 mx-auto overflow-hidden border-2 rounded-lg  dark:bg-gray-800">
@@ -125,13 +125,14 @@ const Detail = () => {
                 {queryTItle}
               </Link>
               <strong>recomendationCount : {recomendationCount}</strong>
-              {/* <p>{recomend.}</p> */}
+             
               <p className="mt-2 text-sm  dark:text-gray-400">{details}</p>
             </div>
           </div>
         </div>
           
-          <h1 className="text-2xl font-bold text-blue-500">All Recommendations</h1>
+          <h1 className="text-2xl font-bold text-blue-500 px-2">All Recommendations</h1>
+         
    
 
           {
@@ -196,7 +197,7 @@ const Detail = () => {
               id=""
               cols="30"
               rows="10"
-              placeholder="Boycotting Reason Details"
+              placeholder="recomendation Details"
               required
             ></textarea>
           </div>

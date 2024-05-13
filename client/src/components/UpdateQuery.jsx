@@ -1,13 +1,55 @@
+import axios from "axios";
+import { useState } from "react";
 
+import toast from "react-hot-toast";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateQuery = () => {
-    const handleUpdate=(e)=>{
-        e.preventDefault()
-    }
+  const navigate=useNavigate()
+  const lodedupdate=useLoaderData()
+  const [updatedquery,setupdatedquery]=useState(lodedupdate)
+  const {
+    ProductName,
+    ProductBrand,
+    productPhoto,
+    queryTItle,
+    details,
+    _id,
+
+  } = updatedquery;
+ 
+  const handleUpdate = async(e) => {
+    e.preventDefault();
+    const form=e.target 
+        const ProductName=form.ProductName.value
+        const ProductBrand=form.ProductBrand.value
+        const productPhoto=form.photo.value
+        const queryTItle=form.QueryTItle.value
+        const details=form.details.value
+
+       const updateQuery={ProductName,ProductBrand,productPhoto,queryTItle,details}
+
+
+        try{
+          const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/update/${_id}`,updateQuery)
+          console.log(data)
+          if(data.acknowledged){
+            setupdatedquery(data)
+
+           toast.success('Your Query is updated')
+           navigate('/myquery')
+          }
+       }
+       catch(err){
+           toast.error('someting went wrong')
+           console.log(err)
+       }
+  
+  };
   return (
     <section className="max-w-4xl p-6 mx-auto  rounded-md shadow-md border-2  dark:bg-gray-800 my-8">
       <h2 className="text-2xl text-[#3B82F6] font-semibold  capitalize dark:text-white">
-      Update Queries
+        Update Queries
       </h2>
 
       <form onSubmit={handleUpdate}>
@@ -19,7 +61,7 @@ const UpdateQuery = () => {
             <input
               id="productname"
               type="text"
-              placeholder="Product Name"
+              defaultValue={ProductName}
               name="ProductName"
               required
               className="block w-full px-4 py-2 mt-2   border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
@@ -32,7 +74,7 @@ const UpdateQuery = () => {
             <input
               id="ProductBrand"
               type="text"
-              placeholder="Product Brand"
+              defaultValue={ProductBrand}
               name="ProductBrand"
               required
               className="block w-full px-4 py-2 mt-2   border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
@@ -45,7 +87,7 @@ const UpdateQuery = () => {
             <input
               id="photo"
               type="text"
-              placeholder="Product Image-URL"
+             defaultValue={productPhoto}
               name="photo"
               required
               className="block w-full px-4 py-2 mt-2   border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
@@ -58,7 +100,7 @@ const UpdateQuery = () => {
             <input
               id="QueryTItle"
               type="text"
-              placeholder="Query TItle"
+            defaultValue={queryTItle}
               name="QueryTItle"
               required
               className="block w-full px-4 py-2 mt-2   border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
@@ -73,7 +115,7 @@ const UpdateQuery = () => {
             id=""
             cols="30"
             rows="10"
-            placeholder="Boycotting Reason Details"
+           defaultValue={details}
             required
           ></textarea>
         </div>
