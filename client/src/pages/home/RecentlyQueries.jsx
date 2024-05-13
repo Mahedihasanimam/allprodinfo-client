@@ -18,7 +18,7 @@ const RecentlyQueries = () => {
         queryData()
     },[])
     return (
-        <div className="my-12">
+        <div className="my-12 px-2">
             <div className="text-center mb-6">
             <h1 className="text-4xl font-bold t">Recent Queries</h1>
            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, itaque!</p>

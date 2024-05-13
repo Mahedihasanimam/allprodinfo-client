@@ -1,5 +1,6 @@
 
 import Faq from "../../components/Faq";
+import WhatWeOffer from "../../components/WhatWeOffer";
 import Banner from "./Banner";
 import Carocel from "./Carocel";
 import RecentlyQueries from "./RecentlyQueries";
@@ -17,6 +18,7 @@ const Home = () => {
             <p>Find quick answers to common queries with our comprehensive Frequently Asked Questions section. Simplify your search for information today!</p>
             </div>
             <Faq/>
+            <WhatWeOffer/>
         </div>
     );
 };
