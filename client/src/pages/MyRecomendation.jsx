@@ -6,11 +6,13 @@ import Swal from "sweetalert2";
 const MyRecomendation = () => {
   const { user } = useContext(AuthContext);
   const [myrecomentData, setMyrecomentData] = useState([]);
-  console.log(myrecomentData);
+
+console.log(myrecomentData)
+
   useEffect(() => {
     const myrecoment = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/recomendation/${user.email}`
+        `${import.meta.env.VITE_API_URL}/recomendation`
       );
       setMyrecomentData(data);
     };
@@ -18,8 +20,6 @@ const MyRecomendation = () => {
   }, []);
 
   const handleMyRecoDelete=async(id)=>{
-    console.log("deleted",id)
-
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to recover this query!",
@@ -38,6 +38,7 @@ const MyRecomendation = () => {
           });
           try{
             const {data}= axios.delete(`${import.meta.env.VITE_API_URL}/recomendation/${id}`)
+
             const remainingdata=myrecomentData.filter(q=>q._id !== id)
             setMyrecomentData(remainingdata)
            }
@@ -66,7 +67,7 @@ const MyRecomendation = () => {
           </thead>
           <tbody>
             {
-                myrecomentData.map(reco=><tr className="even:bg-blue-100 even:text-black" key={reco._id}>
+                myrecomentData.filter(f=>f.RecommenderEmail=== user.email).map(reco=><tr className="even:bg-blue-100 even:text-black" key={reco._id}>
                     {/* row 1 */}
                       <td>
                         <div className="flex items-center gap-3">
@@ -88,7 +89,7 @@ const MyRecomendation = () => {
                      
                       </td>
                       <td>
-                          {reco.userEmail}
+                          {reco.RecommenderEmail}
                       </td>
                       <td>
                           {reco.recomentTitle}

@@ -55,9 +55,11 @@ const Navbar = () => {
         </Link>
       </li>
       }
-      <li className="text-sm  font-semibold">
+      {
+        user && <li className="text-sm  font-semibold">
         <Link to={'/myquery'}>MyQuery</Link>
       </li>
+      }
     </>
   );
   return (
