@@ -54,13 +54,10 @@ const Detail = () => {
       CurrentTimeStamp,
       recomenderPhoto,
       recomendProduct,
-      _id
     };
 
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/recomend`,
-        addRecomenData
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/recomend`,addRecomenData
       );
       
       if (data.acknowledged) {
