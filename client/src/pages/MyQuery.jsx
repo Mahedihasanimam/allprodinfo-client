@@ -12,7 +12,7 @@ const MyQuery = () => {
   useEffect(() => {
     const queryData = async () => {
       try {
-        const { data } = await axios(`${import.meta.env.VITE_API_URL}/queryes`);
+        const { data } = await axios(`${import.meta.env.VITE_API_URL}/myqueryes/${user?.email}`,{withCredentials:true});
         setquery(data);
       } catch (err) {
         console.log(err);

@@ -12,7 +12,7 @@ console.log(myrecomentData)
   useEffect(() => {
     const myrecoment = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/recomendation`,{withCredentials:true}
+        `${import.meta.env.VITE_API_URL}/recomendation/`,{withCredentials:true}
       );
       setMyrecomentData(data);
     };

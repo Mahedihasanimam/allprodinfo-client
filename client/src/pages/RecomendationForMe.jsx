@@ -11,7 +11,7 @@ const RecomendationForMe = () => {
   useEffect(() => {
     const myrecoment = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/recomendation/${user.email}`
+        `${import.meta.env.VITE_API_URL}/recomendation/${user.email}`,{withCredentials:true}
       );
       setMyrecomentData(data);
     };
