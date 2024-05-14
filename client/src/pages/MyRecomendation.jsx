@@ -12,7 +12,7 @@ console.log(myrecomentData)
   useEffect(() => {
     const myrecoment = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/recomendation`
+        `${import.meta.env.VITE_API_URL}/recomendation`,{withCredentials:true}
       );
       setMyrecomentData(data);
     };
@@ -37,7 +37,7 @@ console.log(myrecomentData)
             icon: "success"
           });
           try{
-            const {data}= axios.delete(`${import.meta.env.VITE_API_URL}/recomendation/${id}`)
+            const {data}= axios.delete(`${import.meta.env.VITE_API_URL}/recomendation/${id}`,)
 
             const remainingdata=myrecomentData.filter(q=>q._id !== id)
             setMyrecomentData(remainingdata)

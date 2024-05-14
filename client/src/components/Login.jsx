@@ -5,6 +5,7 @@ import loginimage from "../assets/undraw_sign_in_re_o58h.svg";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 const Login = () => {
   const location=useLocation()
   console.log(location.state)
