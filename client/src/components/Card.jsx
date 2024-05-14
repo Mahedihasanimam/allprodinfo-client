@@ -50,7 +50,8 @@ const Card = ({queryitem}) => {
             <span>{name}</span><br />
             <span className="mx-1 text-xs  dark:text-gray-300">
                 {currentDate}
-              </span>
+              </span><br /><br />
+          <button className="btn bg-[#3B82F6] rounded-sm text-white hover:bg-[#3b83f6b9] border-none">recommend</button>
           </div>
         </div>
       </div>

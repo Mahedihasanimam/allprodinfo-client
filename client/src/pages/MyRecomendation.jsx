@@ -105,9 +105,33 @@ console.log(myrecomentData)
                       </th>
                     </tr>)
             }
+
+
             
           </tbody>
         </table>
+        {
+          myrecomentData.length<1 && <div className="flex my-8 mx-auto  flex-row px-4 lg:w-[1000PX]  pl-4 py-2 gap-2 items-center border rounded-lg shadow overflow-hidden bg-gray-900 dark:bg-gray-50 border-violet-400 dark:border-violet-600">
+          <span className="flex-shrink-0 inline-flex mx-3 item-center justify-center leading-none rounded-full bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-8 w-8"
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </span>
+          <div className="flex-1  p-2 ">
+            <h1 className="lg:text-4xl text-xl font-bold text-white">Ooops! No  Queries Found </h1>
+          </div>
+       
+        </div>
+        }
       </div>
     </div>
   );
