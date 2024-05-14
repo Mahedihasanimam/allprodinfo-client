@@ -41,6 +41,7 @@ const Detail = () => {
     const recomenderPhoto=user?.photoURL;
     const details = form.details.value;
     const CurrentTimeStamp = new Date().toLocaleDateString();
+    const currentTime=new Date().toLocaleTimeString()
     const addRecomenData = {
       queryid,
       queryTitle,
@@ -54,6 +55,7 @@ const Detail = () => {
       CurrentTimeStamp,
       recomenderPhoto,
       recomendProduct,
+      currentTime
     };
 
     try {

@@ -17,36 +17,36 @@ const RecomendationForMe = () => {
     };
     myrecoment();
   }, []);
-  const handleMyRecoDelete = async (id) => {
-    console.log("deleted", id);
+  // const handleMyRecoDelete = async (id) => {
+  //   console.log("deleted", id);
 
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to recover this query!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your query has been deleted.",
-          icon: "success",
-        });
-        try {
-          const { data } = axios.delete(
-            `${import.meta.env.VITE_API_URL}/recomendation/${id}`
-          );
-          const remainingdata = myrecomentData.filter((q) => q._id !== id);
-          setMyrecomentData(remainingdata);
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    });
-  };
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to recover this query!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       Swal.fire({
+  //         title: "Deleted!",
+  //         text: "Your query has been deleted.",
+  //         icon: "success",
+  //       });
+  //       try {
+  //         const { data } = axios.delete(
+  //           `${import.meta.env.VITE_API_URL}/recomendation/${id}`
+  //         );
+  //         const remainingdata = myrecomentData.filter((q) => q._id !== id);
+  //         setMyrecomentData(remainingdata);
+  //       } catch (err) {
+  //         console.log(err);
+  //       }
+  //     }
+  //   });
+  // };
   return (
     <div>
         <h1 className="font-bold my-8 px-4">Recomendation For me</h1>
@@ -60,7 +60,6 @@ const RecomendationForMe = () => {
               <th>Recommender Email</th>
               <th>recomend title</th>
               <th>recomend Details</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -86,15 +85,6 @@ const RecomendationForMe = () => {
                 <td>{reco.RecommenderEmail}</td>
                 <td>{reco.recomentTitle}</td>
                 <td>{reco.details.slice(0, 100)}</td>
-
-                <th>
-                  <button
-                    onClick={() => handleMyRecoDelete(reco._id)}
-                    className="btn btn-ghost "
-                  >
-                    <RiDeleteBinLine size={25} />
-                  </button>
-                </th>
               </tr>
             ))}
           </tbody>
