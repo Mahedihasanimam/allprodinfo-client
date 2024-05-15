@@ -2,6 +2,7 @@ import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import eerrimage from "../assets/404-landing-page-free-vector.jpg"
 // ..
 AOS.init();
 const Card = ({queryitem}) => {
@@ -16,7 +17,7 @@ const Card = ({queryitem}) => {
         <img
         className="object-cover w-full h-72"
         src={productPhoto}
-        alt="product"
+        alt="Thumbnail"
       /> || <CgProfile/>
 
      }

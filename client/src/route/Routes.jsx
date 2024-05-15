@@ -11,10 +11,12 @@ import MyQuery from "../pages/MyQuery";
 import PrivateRoute from "./PrivateRoute";
 import Detail from "../components/Detail";
 import UpdateQuery from "../components/UpdateQuery";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
     {
       path: "/",
+      errorElement:<Error/>,
       element: <MainLayout/>,
       children:[
         {

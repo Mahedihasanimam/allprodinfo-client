@@ -1,4 +1,4 @@
-import image from "../assets/undraw_account_re_o7id.svg"
+import image from "../assets/undraw_questions_re_1fy7.svg"
 
 const Faq = () => {
   return (
