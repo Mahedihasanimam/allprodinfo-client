@@ -8,7 +8,7 @@ const Slider = ({image,title,text}) => {
             <div className="h-full bg-black absolute top-0 w-full opacity-50">
 
             </div>
-            <div className='absolute text-center space-y-4 top-1/4 w-full  left-16 text-white'>
+            <div className='absolute text-center space-y-4 top-1/4 w-full   text-white'>
                 <h1 className='lg:text-4xl md:text-2xl text-lg font-bold'>{title}</h1>
                 <p className="lg:w-1/2 mx-auto ">{text}</p>
                <Link to={'/query'}>

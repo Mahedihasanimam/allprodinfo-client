@@ -8,7 +8,7 @@ const Faq = () => {
         <img className="lg:max-w-2xl " src={image} alt=""  data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine"/>
-        <div className=" w-full  shadow-lgxl bg-base-100" data-aos="zoom-in-left">
+        <div className=" w-full  shadow-lgxl bg-base-100" data-aos="zoom-in-right">
           <div className="join join-vertical w-full">
             <div className="collapse collapse-arrow join-item border border-base-300">
               <input type="radio" name="my-accordion-4" defaultChecked />
