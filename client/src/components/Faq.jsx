@@ -4,7 +4,7 @@ const Faq = () => {
   return (
     <div className="hero px-4 bg-base-100">
       
-      <div className="flex lg:flex-row flex-col items-center w-full gap-6  justify-between  my-12">
+      <div className="flex lg:flex-row flex-col items-center w-full gap-6  justify-between   my-12">
         <img className="lg:max-w-2xl " src={image} alt=""  data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine"/>
