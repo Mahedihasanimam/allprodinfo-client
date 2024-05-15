@@ -43,7 +43,9 @@ const MyQCard = ({myqueryitem,query,setquery}) => {
 
   }
     return (
-        <div className=" relative overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800">
+        <div className=" relative overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800" data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
         {image &&
            <img
            className="object-cover w-full h-72"

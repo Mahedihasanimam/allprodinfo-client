@@ -1,12 +1,17 @@
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const Card = ({queryitem}) => {
 
     const {ProductName,ProductBrand,productPhoto,queryTItle,details,email,name,image,currentDate,currentTime,_id,recomendationCount}=queryitem;
   return (
     <Link to={`/myquery/${_id}`}>
-    <div className=" overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800">
+    <div className=" overflow-hidden border-2 rounded-lg shadow-md dark:bg-gray-800"data-aos="fade-up"
+     data-aos-easing="linear"
+     data-aos-duration="1000">
      {image &&
         <img
         className="object-cover w-full h-72"

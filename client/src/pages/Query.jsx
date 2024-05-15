@@ -28,7 +28,7 @@ const Query = () => {
   };
   return (
     <div className="max-w-[1440px] mx-auto my-12">
-      <div className="flex gap-4 my-6">
+      <div className="flex flex-wrap gap-4 my-6">
         <button onClick={handleonecolumn} className="btn bg-[#3B82F6] text-white font-bold">
           1 column layout
         </button>

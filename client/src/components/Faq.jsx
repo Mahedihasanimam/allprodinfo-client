@@ -5,8 +5,12 @@ const Faq = () => {
     <div className="hero px-4 bg-base-100">
       
       <div className="flex lg:flex-row flex-col items-center w-full gap-6  justify-between  my-12">
-        <img className="lg:max-w-2xl " src={image} alt="" />
-        <div className=" w-full  shadow-lgxl bg-base-100">
+        <img className="lg:max-w-2xl " src={image} alt=""  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"/>
+        <div className=" w-full  shadow-lgxl bg-base-100" data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
           <div className="join join-vertical w-full">
             <div className="collapse collapse-arrow join-item border border-base-300">
               <input type="radio" name="my-accordion-4" defaultChecked />
