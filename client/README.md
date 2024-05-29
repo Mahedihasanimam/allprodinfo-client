@@ -1,6 +1,6 @@
 # Alternative Product Information System
 
-Live Site URL: [Your Live Site URL]
+Live Site URL: https://altprodinfo.web.app/
 
 ## Features:
 - Users can add, update, and delete their own queries about a product.
