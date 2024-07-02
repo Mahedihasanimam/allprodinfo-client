@@ -1,6 +1,7 @@
 # Alternative Product Information System
 
 Live Site URL: https://altprodinfo.web.app/
+server side : https://github.com/Mahedihasanimam/allprodinfo-server
 
 ## Features:
 - Users can add, update, and delete their own queries about a product.

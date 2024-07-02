@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
@@ -18,46 +18,46 @@ const Navbar = () => {
   const navigation = (
     <>
       <li className="text-sm text-[#3B82F6] font-semibold">
-        <Link
+        <NavLink
           className={({ isActive }) =>
             isActive ? "active text-[#3B82F6] bg-red-500" : ""
           }
           to={"/"}
         >
           Home
-        </Link>
+        </NavLink>
       </li>
       <li className="text-sm font-semibold mr-2">
-        <Link
+        <NavLink
           className={({ isActive }) => (isActive ? "active text-[#3B82F6] bg-base-100" : "")}
           to={"/query"}
         >
           Queries
-        </Link>
+        </NavLink>
       </li>
       {
         user && <li className="text-sm font-semibold">
-        <Link
+        <NavLink
           className={({ isActive }) => (isActive ? "active" : "")}
           to={"/recoforme"}
         >
           RecommendationsFor Me
-        </Link>
+        </NavLink>
       </li>
       }
       {
         user && <li className="text-sm font-semibold">
-        <Link
+        <NavLink
           className={({ isActive }) => (isActive ? "active" : "")}
           to={"/myrecoment"}
         >
           My recommendations
-        </Link>
+        </NavLink>
       </li>
       }
       {
         user && <li className="text-sm  font-semibold">
-        <Link to={'/myquery'}>MyQuery</Link>
+        <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={'/myquery'}>MyQuery</NavLink>
       </li>
       }
     </>
